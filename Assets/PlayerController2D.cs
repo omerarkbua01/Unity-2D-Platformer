@@ -1,17 +1,17 @@
-using NUnit.Framework;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class PlayerController2D : MonoBehaviour
 {
     [SerializeField] float speed=5f;
     [SerializeField] float jumpforce=10f;
-    Rigidbody2D rb;
-   
     [SerializeField] Transform groundCheck;
     [SerializeField ]float groundCheckDistance = 0.15f;
     [SerializeField] LayerMask groundLayer;
-     bool isGrounded;
+    [SerializeField] float airControlMultiplier = 0.5f;
+    Rigidbody2D rb;
+    float moveInput;
+    bool jumpPressed;
+    bool isGrounded;
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -20,12 +20,25 @@ public class PlayerController2D : MonoBehaviour
     void Update()
     {
         CheckGround();
-      float moveInput= Input.GetAxis("Horizontal");
-      rb.linearVelocity=new Vector2(moveInput * speed, rb.linearVelocity.y);
-      if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        moveInput= Input.GetAxis("Horizontal");
+      if(Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpPressed=true;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        float control = isGrounded ? 1f : airControlMultiplier;
+        float targetSpeed = moveInput * speed * control;
+        rb.linearVelocity = new Vector2(targetSpeed,rb.linearVelocity.y);
+
+        if(jumpPressed && isGrounded)
         {
             rb.linearVelocity=new Vector2(rb.linearVelocity.x,jumpforce);
         }
+        jumpPressed=false;
+        
     }
     void CheckGround()
     {

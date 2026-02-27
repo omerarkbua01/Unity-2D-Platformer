@@ -452,6 +452,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  airControlMultiplier: 0.6
 --- !u!212 &1132574074
 SpriteRenderer:
   serializedVersion: 2
@@ -552,7 +553,7 @@ Transform:
   m_GameObject: {fileID: 1218907701}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.038, y: -0.283, z: 0}
+  m_LocalPosition: {x: 0.0039, y: -0.2843, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
