@@ -17,6 +17,7 @@ public class PlayerController2D : MonoBehaviour
     float coyoteCounter ;
     float jumpBufferCounter;
     bool isGrounded;
+    public bool IsGrounded => isGrounded;
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
