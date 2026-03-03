@@ -8,9 +8,14 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField ]float groundCheckDistance = 0.15f;
     [SerializeField] LayerMask groundLayer;
     [SerializeField] float airControlMultiplier = 0.5f;
+    [SerializeField] float fallMultiplier = 2.5f;
+    [SerializeField] float lowJumpMultiplier = 2.0f;
+    [SerializeField] float coyoteTime = 0.1f;
+    [SerializeField] float jumpBufferTime = 0.1f;
     Rigidbody2D rb;
     float moveInput;
-    bool jumpPressed;
+    float coyoteCounter ;
+    float jumpBufferCounter;
     bool isGrounded;
     void Start()
     {
@@ -20,10 +25,25 @@ public class PlayerController2D : MonoBehaviour
     void Update()
     {
         CheckGround();
+        if (isGrounded)
+        {
+            coyoteCounter=coyoteTime;
+        }
+        else
+        {
+            coyoteCounter -=Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            jumpBufferCounter=jumpBufferTime;
+        }
+        else
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
         moveInput= Input.GetAxis("Horizontal");
       if(Input.GetKeyDown(KeyCode.Space))
         {
-            jumpPressed=true;
         }
     }
 
@@ -33,12 +53,23 @@ public class PlayerController2D : MonoBehaviour
         float targetSpeed = moveInput * speed * control;
         rb.linearVelocity = new Vector2(targetSpeed,rb.linearVelocity.y);
 
-        if(jumpPressed && isGrounded)
+        if(jumpBufferCounter > 0f && coyoteCounter > 0f)
         {
             rb.linearVelocity=new Vector2(rb.linearVelocity.x,jumpforce);
+            jumpBufferCounter =0f;
+            coyoteCounter =0f;
         }
-        jumpPressed=false;
-        
+     
+        if(rb.linearVelocity.y < 0f)
+        {
+            rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier -1f) * Time.fixedDeltaTime
+            ;
+        }
+        else if ( rb.linearVelocity.y >0f && !Input.GetKey(KeyCode.Space))
+        {
+            rb.linearVelocity +=Vector2.up *Physics2D.gravity.y * (lowJumpMultiplier - 1f) * Time.fixedDeltaTime;
+        }
+
     }
     void CheckGround()
     {
