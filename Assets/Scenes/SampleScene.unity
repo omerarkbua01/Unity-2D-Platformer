@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -69.4162, y: -39.6796, z: -20}
+  m_LocalPosition: {x: -70.6, y: -40, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1161,7 +1161,7 @@ Transform:
   m_GameObject: {fileID: 1892614545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -69.4162, y: -39.6796, z: -20}
+  m_LocalPosition: {x: -70.6, y: -40, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1241,24 +1241,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 10.183385
-      objectReference: {fileID: 0}
-    - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 14.358029
-      objectReference: {fileID: 0}
-    - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 15.234133
-      objectReference: {fileID: 0}
-    - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -69.4162
+      value: -70.6
       objectReference: {fileID: 0}
     - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -39.6796
+      value: -40
       objectReference: {fileID: 0}
     - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1295,14 +1283,6 @@ PrefabInstance:
     - target: {fileID: 2182709545785405197, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313644813590045205, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
-      propertyPath: m_Size.x
-      value: 0.3999701
-      objectReference: {fileID: 0}
-    - target: {fileID: 8313644813590045205, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.020046823
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
