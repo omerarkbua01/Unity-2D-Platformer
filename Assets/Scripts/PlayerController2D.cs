@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
 {
-    [SerializeField] float speed=5f;
-    [SerializeField] float jumpforce=10f;
+    [SerializeField] float speed=8f;
+    [SerializeField] float jumpforce=13f;
     [SerializeField] Transform groundCheck;
-    [SerializeField ]float groundCheckDistance = 0.15f;
+    [SerializeField ]float groundCheckDistance = 0.2f;
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] float airControlMultiplier = 0.5f;
-    [SerializeField] float fallMultiplier = 2.5f;
-    [SerializeField] float lowJumpMultiplier = 2.0f;
+    [SerializeField] float airControlMultiplier = 0.9f;
+    [SerializeField] float fallMultiplier = 3.5f;
+    [SerializeField] float lowJumpMultiplier = 3.0f;
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
     Rigidbody2D rb;
