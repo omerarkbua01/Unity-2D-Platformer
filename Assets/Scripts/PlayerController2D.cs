@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController2D : MonoBehaviour
 {
@@ -7,13 +8,14 @@ public class PlayerController2D : MonoBehaviour
     [SerializeField] Transform groundCheck;
     [SerializeField ]float groundCheckDistance = 0.2f;
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] float airControlMultiplier = 0.9f;
+    [SerializeField] float airControlMultiplier = 0.7f;
     [SerializeField] float fallMultiplier = 3.5f;
     [SerializeField] float lowJumpMultiplier = 3.0f;
     [SerializeField] float coyoteTime = 0.1f;
     [SerializeField] float jumpBufferTime = 0.1f;
     Rigidbody2D rb;
     float moveInput;
+    bool jumpHeld;
     float coyoteCounter ;
     float jumpBufferCounter;
     bool isGrounded;
@@ -32,19 +34,34 @@ public class PlayerController2D : MonoBehaviour
         }
         else
         {
-            coyoteCounter -=Time.deltaTime;
+            coyoteCounter =Mathf.Max(0f, coyoteCounter - Time.deltaTime);
+            jumpBufferCounter =Mathf.Max(0f, jumpBufferCounter - Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+    }
+
+    public void OnMove(InputAction.CallbackContext ctx)
+    {
+        moveInput = ctx.ReadValue<Vector2>().x;
+    }
+
+    public void OnJump(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
         {
-            jumpBufferCounter=jumpBufferTime;
+            jumpBufferCounter = jumpBufferTime;
+            jumpHeld = true;
         }
-        else
+        if (ctx.canceled)
         {
-            jumpBufferCounter -= Time.deltaTime;
+            jumpHeld = false;
         }
-        moveInput= Input.GetAxis("Horizontal");
-      if(Input.GetKeyDown(KeyCode.Space))
+    }
+
+    public void OnInteract(InputAction.CallbackContext ctx)
+    {
+        if (ctx.performed)
         {
+            Debug.Log("Interact pressed");
         }
     }
 
@@ -66,7 +83,7 @@ public class PlayerController2D : MonoBehaviour
             rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier -1f) * Time.fixedDeltaTime
             ;
         }
-        else if ( rb.linearVelocity.y >0f && !Input.GetKey(KeyCode.Space))
+        else if ( rb.linearVelocity.y >0f && !jumpHeld)
         {
             rb.linearVelocity +=Vector2.up *Physics2D.gravity.y * (lowJumpMultiplier - 1f) * Time.fixedDeltaTime;
         }
