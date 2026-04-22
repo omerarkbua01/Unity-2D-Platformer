@@ -17,11 +17,11 @@ public class EnemyController2D : MonoBehaviour
     [SerializeField] Transform player;
 
     [Header ("Movement")]
-    [SerializeField] float patrolSpeed = 2f;
-    [SerializeField] float chaseSpeed = 3.5f;
+    [SerializeField] float patrolSpeed = 5f;
+    [SerializeField] float chaseSpeed = 5f;
 
     [Header ("Detection")]
-    [SerializeField] float detectionRange = 4f;
+    [SerializeField] float detectionRange = 5f;
 
     [Header ("Idle")]
     [SerializeField] float idleDuration = 0.75f;

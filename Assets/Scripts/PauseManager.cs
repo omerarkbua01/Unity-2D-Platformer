@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
+    [SerializeField] GameOverManager gameOverManager;
+    [SerializeField] LevelCompleteManager levelCompleteManager;
     bool isPaused;
 
     void Start()
@@ -14,6 +16,12 @@ public class PauseManager : MonoBehaviour
 
     void Update()
     {
+        if(gameOverManager != null && gameOverManager.IsGameOver)
+        return;
+
+        if(levelCompleteManager != null && levelCompleteManager.IsLevelComplete)
+        return;
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if(isPaused) Resume();

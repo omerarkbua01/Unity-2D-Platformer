@@ -1,9 +1,11 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth = 3;
+    [SerializeField] GameOverManager gameOverManager;
     
     public int CurrentHealth {get; private set;}
     [SerializeField] TMP_Text healthText;
@@ -23,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if(CurrentHealth <= 0) return;
         CurrentHealth -= amount;
         if(CurrentHealth < 0)
            CurrentHealth = 0;
@@ -40,6 +43,9 @@ public class PlayerHealth : MonoBehaviour
            if (CurrentHealth == 0)
             {
             Debug.Log("Player Dead");
+
+            if(gameOverManager != null)
+            gameOverManager.ShowGameOver();
             }
     }
 

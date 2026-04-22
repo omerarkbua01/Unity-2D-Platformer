@@ -6,6 +6,8 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance {get; private set;}
     public int Score {get; private set;}
     [SerializeField] TMP_Text scoreText;
+    [SerializeField] int targetscore = 10;
+    [SerializeField] LevelCompleteManager levelCompleteManager;
 
     void Awake()
     {
@@ -23,6 +25,12 @@ public class ScoreManager : MonoBehaviour
         Score +=amount;
         Debug.Log($"Score :  {Score}");
         UpdateScoreUI();
+
+        if(Score >=targetscore)
+        {
+            if(levelCompleteManager != null)
+            levelCompleteManager.ShowLevelComplete();
+        }
     }
 
     void UpdateScoreUI()
