@@ -13,6 +13,6 @@ public class DebugHUD : MonoBehaviour
         text.text=
         $"Grounded : {player.IsGrounded} \n " +
         $"VelX :  {rb.linearVelocity.x:F2} \n" +
-        $"VelY :  {rb.linearVelocity.y:F2} \n";
+        $" VelY :  {rb.linearVelocity.y:F2} \n";
     }
 }

@@ -7,7 +7,7 @@ public class CoinPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Coin Picked!");
-            ScoreManager.Instance.AddScore(1);
+            ScoreManager.Instance?.AddScore(1);
             Destroy(gameObject);
         }
     }
