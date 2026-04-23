@@ -32,9 +32,10 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            TakeDamage(1);
-        }
+    // DEBUG - KALDIRILACAK    
+    //    if (Input.GetKeyDown(KeyCode.K))
+    //    {
+    //        TakeDamage(1);
+    //    }
     }
 }

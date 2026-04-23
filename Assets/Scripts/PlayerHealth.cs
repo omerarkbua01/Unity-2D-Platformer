@@ -6,6 +6,10 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] int maxHealth = 3;
     [SerializeField] GameOverManager gameOverManager;
+    [SerializeField] CheckpointManager checkpointManager;
+    [SerializeField] Transform playerTransform;
+
+
     
     public int CurrentHealth {get; private set;}
     [SerializeField] TMP_Text healthText;
@@ -17,6 +21,9 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        if(playerTransform == null)
+        playerTransform = transform;
+
         CurrentHealth = maxHealth;
         UpdateHealthUI();
         if(sr != null)
@@ -44,9 +51,32 @@ public class PlayerHealth : MonoBehaviour
             {
             Debug.Log("Player Dead");
 
+            if(checkpointManager != null && checkpointManager.HasCheckpoint())
+            {
+                RespawnAtCheckpoint();
+                return;
+            }
+
             if(gameOverManager != null)
             gameOverManager.ShowGameOver();
             }
+    }
+
+    void RespawnAtCheckpoint()
+    {
+        if(checkpointManager == null || checkpointManager.CurrentCheckpoint == null) return;
+
+        CurrentHealth = maxHealth;
+        UpdateHealthUI();
+
+        playerTransform.position = checkpointManager.CurrentCheckpoint.position;
+
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if(rb != null)
+        rb.linearVelocity = Vector2.zero;
+
+        if(sr != null)
+        sr.color = originalColor;
     }
 
     void UpdateHealthUI()
@@ -64,9 +94,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(1);
-        }
+      // DEBUG - KALDIRILACAK  
+      //  if (Input.GetKeyDown(KeyCode.H))
+      //  {
+      //      TakeDamage(1);
+      //  }
     }
 }

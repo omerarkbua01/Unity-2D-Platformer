@@ -14,6 +14,8 @@ public class PauseManager : MonoBehaviour
         Resume();
     }
 
+    // TODO: Hala eski Input System kullaniyor.
+    // Ileride New Input System'e tasınacak.
     void Update()
     {
         if(gameOverManager != null && gameOverManager.IsGameOver)
