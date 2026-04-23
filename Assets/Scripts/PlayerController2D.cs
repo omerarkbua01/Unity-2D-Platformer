@@ -20,6 +20,7 @@ public class PlayerController2D : MonoBehaviour
     float jumpBufferCounter;
     bool isGrounded;
     public bool IsGrounded => isGrounded;
+    public Vector2 ExternalVelocity {get;set;}
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
@@ -69,7 +70,7 @@ public class PlayerController2D : MonoBehaviour
     {
         float control = isGrounded ? 1f : airControlMultiplier;
         float targetSpeed = moveInput * speed * control;
-        rb.linearVelocity = new Vector2(targetSpeed,rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(targetSpeed + ExternalVelocity.x,rb.linearVelocity.y);
 
         if(jumpBufferCounter > 0f && coyoteCounter > 0f)
         {
@@ -88,7 +89,16 @@ public class PlayerController2D : MonoBehaviour
             rb.linearVelocity +=Vector2.up *Physics2D.gravity.y * (lowJumpMultiplier - 1f) * Time.fixedDeltaTime;
         }
 
+        ExternalVelocity = Vector2.zero;
+
     }
+
+    public void Bounce(float bounceForce)
+    {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x,bounceForce);
+    }
+
+
     void CheckGround()
     {
         RaycastHit2D hit= Physics2D.Raycast(groundCheck.position,Vector2.down,groundCheckDistance,groundLayer);
