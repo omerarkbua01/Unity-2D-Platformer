@@ -141,3 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9ebc597ad64444cca50cbb438c9223a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CoinPickup
+  pickupSfx: {fileID: 8300000, guid: 83d92fa29ef4d4d99b8d8d673ed54517, type: 3}
+  pickupVolume: 1
+  coinVfxPrefab: {fileID: 8215493166951995774, guid: 5f588a63407cd41df8b445914318ec19, type: 3}

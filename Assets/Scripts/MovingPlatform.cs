@@ -1,5 +1,4 @@
-using System.Security.Cryptography;
-using Unity.AppUI.Core;
+
 using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour

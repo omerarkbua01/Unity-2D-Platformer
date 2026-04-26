@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController2D : MonoBehaviour
 {
+    [SerializeField] GameObject jumpVfxPrefab;
+    [SerializeField] AudioClip jumpSfx;
+    [SerializeField] float jumpVolume = 1f;
     [SerializeField] float speed=8f;
     [SerializeField] float jumpforce=13f;
     [SerializeField] Transform groundCheck;
@@ -77,6 +80,12 @@ public class PlayerController2D : MonoBehaviour
             rb.linearVelocity=new Vector2(rb.linearVelocity.x,jumpforce);
             jumpBufferCounter =0f;
             coyoteCounter =0f;
+
+            if(jumpSfx != null)
+            AudioSource.PlayClipAtPoint(jumpSfx, transform.position,jumpVolume);
+
+            if(jumpVfxPrefab != null)
+            Instantiate(jumpVfxPrefab,groundCheck.position,Quaternion.identity);
         }
      
         if(rb.linearVelocity.y < 0f)

@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class StompHitbox : MonoBehaviour
 {
+    [SerializeField] AudioClip stompSfx;
+    [SerializeField] float stompVolume = 1f;
+    [SerializeField] GameObject stompVfxPrefab;
     [SerializeField] EnemyHealth enemyHealth;
     [SerializeField] float bounceForce = 10f;
 
@@ -29,7 +32,17 @@ public class StompHitbox : MonoBehaviour
         if(enemyHealth != null && enemyHealth.CurrentHealth > 0)
         {
             playerController.Bounce(bounceForce);
+
+            if(stompVfxPrefab != null)
+            {
+            Debug.Log("Stomp VFX Spawn");
+            Instantiate(stompVfxPrefab,enemyHealth.transform.position,Quaternion.identity);
+            }
+
             enemyHealth.TakeDamage(enemyHealth.CurrentHealth);
+
+            if(stompSfx != null)
+            AudioSource.PlayClipAtPoint(stompSfx,transform.position,stompVolume);
         } 
     }
 

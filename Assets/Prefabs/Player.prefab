@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bedd4cbde2544ada98ff614149516b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController2D
+  jumpSfx: {fileID: 8300000, guid: 3a9682a64048c41fda9de4890ffe6e34, type: 3}
+  jumpVolume: 1
   speed: 9
   jumpforce: 12
   groundCheck: {fileID: 2390440987414574751}
@@ -119,8 +121,8 @@ MonoBehaviour:
   airControlMultiplier: 0.8
   fallMultiplier: 3.5
   lowJumpMultiplier: 4
-  coyoteTime: 0.2
-  jumpBufferTime: 0.2
+  coyoteTime: 0.1
+  jumpBufferTime: 0.1
 --- !u!61 &7386301817401984022
 BoxCollider2D:
   m_ObjectHideFlags: 0

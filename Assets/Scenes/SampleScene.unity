@@ -1882,7 +1882,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1933,7 +1933,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.7, y: -29.5, z: -20}
+  m_LocalPosition: {x: -74.2, y: -41.42, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2569,12 +2569,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -3513,6 +3513,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 046baa42817524dbb8abae0e9616ccc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StompHitbox
+  stompSfx: {fileID: 8300000, guid: f6b3378c59f524badb7d59073274c2ed, type: 3}
+  stompVolume: 1
+  stompVfxPrefab: {fileID: 69499105974497539, guid: 375135159aa6442cbbad88f49a5e9b06, type: 3}
   enemyHealth: {fileID: 1618157616}
   bounceForce: 12
 --- !u!61 &1022637726
@@ -3646,7 +3649,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 23.117523, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3656,7 +3659,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 260.39383, y: 1.891098}
+  m_Size: {x: 306.6289, y: 1.891098}
   m_EdgeRadius: 0
 --- !u!4 &1134943076
 Transform:
@@ -4129,7 +4132,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4869,7 +4872,7 @@ Transform:
   m_GameObject: {fileID: 1711485370}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 64.62, y: -48.6, z: 0}
+  m_LocalPosition: {x: 66.1, y: -48.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4913,7 +4916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5493,7 +5496,7 @@ Transform:
   m_GameObject: {fileID: 1892614545}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.7, y: -29.5, z: -20}
+  m_LocalPosition: {x: -74.2, y: -41.42, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5840,7 +5843,7 @@ Transform:
   m_GameObject: {fileID: 2088985399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 100.76, y: -48.6, z: 0}
+  m_LocalPosition: {x: 99.9, y: -48.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5988,11 +5991,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.7
+      value: -74.2
       objectReference: {fileID: 0}
     - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -29.5
+      value: -41.42
       objectReference: {fileID: 0}
     - target: {fileID: 22739580093825221, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6026,6 +6029,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 888343840597631715, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
+      propertyPath: jumpVfxPrefab
+      value: 
+      objectReference: {fileID: 1532572423479166137, guid: a25b567a198e34eab996798e478eea21, type: 3}
     - target: {fileID: 2182709545785405197, guid: c6f9675316fb84db6899c9abff5e2834, type: 3}
       propertyPath: m_Name
       value: Player
