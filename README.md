@@ -87,8 +87,8 @@ Targeting a junior Unity Developer position.
 | Platform | Version | Link |
 |----------|---------|------|
 | Windows | v0.5 | [Unity-2D-Platformer-Windows-v0.5.zip](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/download/v0.5/Unity-2D-Platformer-Windows-v0.5.zip)  |
-| macOS | v0.5 | [[Unity-2D-Platformer-Mac-v0.5.zip]](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/download/v0.5/Unity-2D-Platformer-Mac-v0.5.zip)  |
-| Android APK | v0.5 | [[Platformer_MobileCheckpoint_v0.1.apk.zip]](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/download/v0.5/Platformer_MobileCheckpoint_v0.1.apk.zip)  |
+| macOS | v0.5 | [Unity-2D-Platformer-Mac-v0.5.zip](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/download/v0.5/Unity-2D-Platformer-Mac-v0.5.zip)  |
+| Android APK | v0.5 | [Platformer_MobileCheckpoint_v0.1.apk.zip](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/download/v0.5/Platformer_MobileCheckpoint_v0.1.apk.zip)  |
 
 > ⚠️ macOS: If blocked by Gatekeeper, right-click → Open
 
