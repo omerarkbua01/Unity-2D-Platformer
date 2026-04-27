@@ -114,4 +114,27 @@ public class PlayerController2D : MonoBehaviour
     isGrounded=hit.collider!=null;
     Debug.DrawRay(groundCheck.position,Vector2.down*groundCheckDistance,isGrounded ? Color.green:Color.red);
     }
+
+
+    public void MobileMoveLeftDown()
+    {
+        moveInput = -1f;
+    }
+    public void MobileMoveRightDown()
+    {
+        moveInput = 1f;
+    }
+    public void MobileMoveReleased()
+    {
+        moveInput = 0f;
+    }
+    public void MobileJumpPressed()
+    {
+        jumpBufferCounter = jumpBufferTime;
+        jumpHeld = true;
+    }
+    public void MobileJumpReleased()
+    {
+        jumpHeld = false;
+    }
 }
