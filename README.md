@@ -1,102 +1,134 @@
 # Unity 2D Platformer
 
-A 2D platformer game built with Unity as part of my game development learning journey.
+A 2D platformer game built with Unity as part of a structured 7-month game development learning journey. 
+Targeting a junior Unity Developer position.
 
-## 🎮 Controls (PC)
+## 🎮 Controls
 
-- **A / D** - Move left/right
-- **Space** - Jump (hold for higher jump!)
-- **Escape** - Pause
+### PC
+| Key | Action |
+|-----|--------|
+| A / D | Move left / right |
+| Space | Jump (hold for higher jump) |
+| Escape | Pause |
+
+### Mobile (Android)
+| Button | Action |
+|--------|--------|
+| ◄ | Move left |
+| ► | Move right |
+| ▲ | Jump (hold for higher jump) |
 
 ## 🏆 Win / Lose Conditions
 
 - **Win:** Collect all coins → Level Complete
-- **Lose:** Health reaches 0 → Game Over
+- **Lose:** Health reaches 0 or fall into void → Game Over
+- **Checkpoint:** Mid-level checkpoint saves respawn position
 
-## ✅ Current Features
+## ✅ Features
 
-### Movement & Physics
-- Player Movement: Horizontal movement with air control (reduced in-air mobility)
-- Jump Mechanics: Variable jump height (tap vs hold)
-- Better Jump: Faster falling + responsive short jumps
-- Coyote Time: 0.1s grace period after leaving platform edge
-- Jump Buffer: 0.1s input memory for forgiving timing
-- Raycast Ground Detection: Accurate ground checking
-- Physics-based Controls: Proper FixedUpdate implementation
-
-### Camera
-- Cinemachine: Virtual camera with smooth damping
-- Rigidbody2D Interpolation: Jitter-free camera follow
+### Player
+- Horizontal movement with air control
+- Variable jump height (tap vs hold)
+- Coyote time (0.2s grace period after leaving platform)
+- Jump buffer (0.2s input memory for forgiving timing)
+- Raycast ground detection
+- Hit flash feedback on damage
 
 ### Enemy AI
 - Idle / Patrol / Chase state machine
 - Contact damage with cooldown
-- Dynamic Rigidbody2D (Gravity Scale 0)
+- Head stomp mechanic — jump on enemy to kill
+- Bounce feedback on successful stomp
+
+### Platformer Mechanics
+- Moving platform with player carry system
+- Fail zone — instant death on fall
+- Checkpoint system — respawn at checkpoint after death
 
 ### Game Flow
 - Game Over screen + restart
 - Level Complete screen + restart
-- Pause / Game Over / Win conflict resolved
+- Pause menu (ESC / Android back button)
+- Pause / Game Over / Win conflict resolution
 
-### UI & Menus
-- Pause Menu: ESC to pause/resume
-- Game Over Panel
-- Level Complete Panel
-- Score UI: Real-time score display
-- Health UI: Real-time health display + hit flash
-- Debug HUD: F1 toggle (grounded state + velocity display)
+### UI
+- Real-time health display + hit flash
+- Real-time score display
+- Debug HUD (F1 toggle) — velocity + grounded state
+- Responsive UI (Scale With Screen Size)
 
-### Gameplay
-- Collectible System: Coin pickup with trigger detection
-- Score Manager: Singleton pattern with win condition check
-- Prefab Workflow: Reusable Player and Obstacle prefabs
+### Audio / Visual
+- Coin collect SFX
+- Jump SFX
+- Stomp SFX
+- Coin collect VFX (particle)
+- Jump VFX (particle)
+- Stomp VFX (particle)
+
+### Mobile
+- On-screen left / right / jump controls
+- EventTrigger-based hold input (basılı tutma desteği)
+- Android back button → pause
+- Canvas Scaler — multi-resolution support
+- Android APK build
 
 ## 🛠️ Technical Details
 
 - **Engine:** Unity 6.3 LTS
 - **Language:** C#
-- **Platform:** PC (Windows + macOS builds)
+- **Platform:** PC (Windows + macOS) + Android
+- **Input:** New Input System (PC) + EventTrigger (Mobile)
 - **Camera:** Cinemachine 3.x
-- **Physics:** Rigidbody2D with Interpolation
-- **Input:** New Input System (Player) + Legacy (UI)
+- **Physics:** Rigidbody2D
+
+## 📥 Downloads
+
+| Platform | Version | Link |
+|----------|---------|------|
+| Windows | v0.5 | Unity-2D-Platformer-Windows-v0.5.zip |
+| macOS | v0.5 | Unity-2D-Platformer-Mac-v0.5.zip |
+| Android APK | v0.5 | Platformer_MobileCheckpoint_v0.1.apk.zip |
+
+> ⚠️ macOS: If blocked by Gatekeeper, right-click → Open
 
 ## 📹 Demo
 
-- **v0.1 Release** - Basic movement + jump
-- **v0.2 Release** - Coin system + pause menu + UI
-- **v0.3 Release** - Enemy AI + Game Over + Level Complete
+- **v0.1** - Basic movement + jump
+- **v0.2** - Coin system + pause menu + UI
+- **v0.3** - Enemy AI + Game Over + Level Complete
+- **v0.4** - Moving platform + checkpoint + stomp + SFX/VFX
+- **v0.5** - Mobile checkpoint — Android build + on-screen controls
 
 ## 🚀 Development Progress
 
-Following a 7-month learning plan toward Junior Unity Developer position.
+Following a structured 7-month Unity learning plan toward a Junior Unity Developer position.
 
-### Month 1 — Completed
-**Week 2:**
-- ✅ Movement + Jump mechanics
-- ✅ Git workflow + GitHub repo
-- ✅ Build pipeline (macOS)
+### Month 1 — February ✅
+- Unity setup, 2D basics, Git workflow
+- Player movement, jump mechanics, Cinemachine
+- Coin system, Score UI, Pause menu, Debug HUD
 
-**Week 3:**
-- ✅ Camera system (CameraFollow + Cinemachine)
-- ✅ UI systems (DebugHUD + Pause Menu + Score UI)
-- ✅ Prefab workflow
-- ✅ Collectible coin system with score tracking
+### Month 2 — March ✅
+- New Input System
+- Enemy idle / patrol / chase AI
+- Contact damage, hit feedback
+- Game Over + Level Complete flow
+- Pause conflict resolution
 
-### Month 2 — In Progress
-**Week 1:**
-- ✅ New Input System setup
-- ✅ Player movement refactor
+### Month 3 — April ✅
+- Fail zone, checkpoint system
+- Moving platform with player carry
+- Head stomp mechanic
+- SFX + VFX feedback
+- Polish pass
+- **Mobile checkpoint: Android build + on-screen controls**
 
-**Week 2:**
-- ✅ Enemy idle / patrol / chase AI
-- ✅ Contact damage system + cooldown
-- ✅ Game Over flow
-- ✅ Level Complete flow
-- ✅ Pause conflict fixes
-- ✅ Mini level v1
+### Month 4 — May ⏳
+- Top-Down Shooter project
 
 ## 👨‍💻 Developer
 
 - **Developer:** Ömer F. Arıkbuğa
-- **GitHub:** @omerarkbua01
-- **Learning Plan:** v4.5 - 7-month Unity game development roadmap
+- **GitHub:** [@omerarkbua01](https://github.com/omerarkbua01)
+- **Learning Plan:** v4.5 — 7-month Unity game development roadmap
