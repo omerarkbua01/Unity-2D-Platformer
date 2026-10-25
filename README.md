@@ -49,13 +49,13 @@ Targeting a junior Unity Developer position.
 ### Enemy AI
 - Idle / Patrol / Chase state machine
 - Contact damage with cooldown
-- Head stomp mechanic — jump on enemy to kill
+- Head stomp mechanic: jump on enemy to kill
 - Bounce feedback on successful stomp
 
 ### Platformer Mechanics
 - Moving platform with player carry system
-- Fail zone — instant death on fall
-- Checkpoint system — respawn at checkpoint after death
+- Fail zone: instant death on fall
+- Checkpoint system: respawn at checkpoint after death
 
 ### Game Flow
 - Game Over screen + restart
@@ -66,7 +66,7 @@ Targeting a junior Unity Developer position.
 ### UI
 - Real-time health display + hit flash
 - Real-time score display
-- Debug HUD (F1 toggle) — velocity + grounded state
+- Debug HUD (F1 toggle): velocity + grounded state
 - Responsive UI (Scale With Screen Size)
 
 ### Audio / Visual
@@ -81,7 +81,7 @@ Targeting a junior Unity Developer position.
 - On-screen left / right / jump controls
 - EventTrigger-based hold input (basılı tutma desteği)
 - Android back button → pause
-- Canvas Scaler — multi-resolution support
+- Canvas Scaler: multi-resolution support
 - Android APK build
 
 ## 🛠️ Technical Details
@@ -107,7 +107,7 @@ Targeting a junior Unity Developer position.
 
 | Version | Highlights |
 |---------|------------|
-| [v0.5](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.5) | Mobile checkpoint — Android build + on-screen controls |
+| [v0.5](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.5) | Mobile checkpoint: Android build + on-screen controls |
 | [v0.4](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.4) | Enemy AI + game flow + mini level |
 | [v0.3](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.3) | New Input System (move, jump, interact) |
 | [v0.2](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.2) | Coin system + pause menu + UI |
@@ -117,19 +117,19 @@ Targeting a junior Unity Developer position.
 
 Following a structured 7-month Unity learning plan toward a Junior Unity Developer position.
 
-### Month 1 — February ✅
+### Month 1 · February ✅
 - Unity setup, 2D basics, Git workflow
 - Player movement, jump mechanics, Cinemachine
 - Coin system, Score UI, Pause menu, Debug HUD
 
-### Month 2 — March ✅
+### Month 2 · March ✅
 - New Input System
 - Enemy idle / patrol / chase AI
 - Contact damage, hit feedback
 - Game Over + Level Complete flow
 - Pause conflict resolution
 
-### Month 3 — April ✅
+### Month 3 · April ✅
 - Fail zone, checkpoint system
 - Moving platform with player carry
 - Head stomp mechanic
@@ -143,7 +143,7 @@ Following a structured 7-month Unity learning plan toward a Junior Unity Develop
 
 ```
 Assets/
-├── Scripts/        # gameplay code — player, enemy AI, checkpoints, platforms, UI, game flow
+├── Scripts/        # gameplay code: player, enemy AI, checkpoints, platforms, UI, game flow
 ├── Prefabs/        # Player, Coin, Obstacle and VFX prefabs
 ├── Scenes/         # SampleScene (the level)
 ├── Input/          # Input System action asset + generated PlayerControls
@@ -162,4 +162,4 @@ Assets/
 
 - **Developer:** Ömer F. Arıkbuğa
 - **GitHub:** [@omerarkbua01](https://github.com/omerarkbua01)
-- **Learning Plan:** v4.5 — 7-month Unity game development roadmap
+- **Learning Plan:** v4.5, a 7-month Unity game development roadmap
