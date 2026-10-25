@@ -1,7 +1,18 @@
 # Unity 2D Platformer
 
-A 2D platformer game built with Unity as part of a structured 7-month game development learning journey. 
+![Unity 2D Platformer cover](Docs/cover.png)
+
+[![Latest release](https://img.shields.io/github/v/release/omerarkbua01/Unity-2D-Platformer?label=release&color=ffd23f)](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/latest)
+![Unity](https://img.shields.io/badge/Unity-6.3-000000?logo=unity&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?logo=csharp&logoColor=white)
+![Platforms](https://img.shields.io/badge/platforms-Windows%20%7C%20macOS%20%7C%20Android-5b6cc4)
+
+A 2D platformer game built with Unity as part of a structured 7-month game development learning journey.
 Targeting a junior Unity Developer position.
+
+**▶ Play it:** download the latest build for Windows, macOS or Android from [Releases](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/latest).
+
+> The cover image is illustrative art, not an in-game screenshot.
 
 ## 🎮 Controls
 
@@ -92,13 +103,15 @@ Targeting a junior Unity Developer position.
 
 > ⚠️ macOS: If blocked by Gatekeeper, right-click → Open
 
-## 📹 Demo
+## 🏷️ Version History
 
-- **v0.1** - Basic movement + jump
-- **v0.2** - Coin system + pause menu + UI
-- **v0.3** - Enemy AI + Game Over + Level Complete
-- **v0.4** - Moving platform + checkpoint + stomp + SFX/VFX
-- **v0.5** - Mobile checkpoint — Android build + on-screen controls
+| Version | Highlights |
+|---------|------------|
+| [v0.5](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.5) | Mobile checkpoint — Android build + on-screen controls |
+| [v0.4](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.4) | Enemy AI + game flow + mini level |
+| [v0.3](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.3) | New Input System (move, jump, interact) |
+| [v0.2](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.2) | Coin system + pause menu + UI |
+| [v0.1](https://github.com/omerarkbua01/Unity-2D-Platformer/releases/tag/v0.1) | Movement + jump + air control |
 
 ## 🚀 Development Progress
 
@@ -124,8 +137,26 @@ Following a structured 7-month Unity learning plan toward a Junior Unity Develop
 - Polish pass
 - **Mobile checkpoint: Android build + on-screen controls**
 
-### Month 4 — May ⏳
-- Top-Down Shooter project
+**Status:** v0.5 is the current playable milestone of this project.
+
+## 📁 Project Structure
+
+```
+Assets/
+├── Scripts/        # gameplay code — player, enemy AI, checkpoints, platforms, UI, game flow
+├── Prefabs/        # Player, Coin, Obstacle and VFX prefabs
+├── Scenes/         # SampleScene (the level)
+├── Input/          # Input System action asset + generated PlayerControls
+├── GameDefault/    # URP, volume and physics material defaults
+├── Audio/          # SFX
+└── PNG FOLDER/     # mobile control and UI sprites
+```
+
+## ▶️ How to Run
+
+1. Install **Unity 6.3 (6000.3.7f1)** via Unity Hub
+2. Clone the repository and open the folder in Unity Hub (**Add project from disk**)
+3. Open `Assets/Scenes/SampleScene.unity` and press **Play**
 
 ## 👨‍💻 Developer
 
