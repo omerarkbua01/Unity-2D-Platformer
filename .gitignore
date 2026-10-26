@@ -16,6 +16,9 @@
 *.blend1
 *.blend1.meta
 
+# Burst debug information is generated next to player builds and must not be shipped or committed
+*_BurstDebugInformation_DoNotShip/
+
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
 /[Mm]emoryCaptures/
